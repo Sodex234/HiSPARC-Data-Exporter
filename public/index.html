@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HiSPARC Data Downloader</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <br />
+                    <div class="jumbotron">
+                        <h1 class="display-4">HiSPARC Data Downloader</h1>
+                        <p class="lead">This utlility will help you find useful data easier.</p>
+                        <hr class="my-4">
+                        <p>Please note that all requests are done from your computer, along with all computations - this may slow it down while we calculate the data!</p>
+                        <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <p>I would like to download the </p>
+                   
+                   
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected value="Top">Top</option>
+                                <option value="Bottom">Bottom</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="percentageInput" placeholder="Enter a percentage" />
+                                <div class="input-group-append">
+                                    <label class="input-group-text" for="percentageInput">%</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p> of the sorted data, sorting by</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected value="ascending">Ascending</option>
+                                <option value="decending">Decending</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="custom-select">
+                                <option selected value="pulseHeight">Pulse Height</option>
+                                <option value="integral">Integral</option>
+                                <option value="numberOfMips">Number of Mips</option>
+                                <option value="arrivalTimes">Arrival Times</option>
+                                <option value="triggerTime">Trigger Time</option>
+                                <option value="zenith">Zenith</option>
+                                <option value="azimuth">Azimuth</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <p>between the dates</p>
+                    
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input class="form-control" type="date" />
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <p>and</p>
+                        </div>
+                        <div class="col-md-5">
+                            <input class="form-control" type="date" />
+                        </div>
+                    </div>
+                    
+                    <hr />
+                    <p><b>Options</b></p>
+                    <p>Post sort by time &nbsp;&nbsp;<input type="checkbox" /></p>
+                
+                    <button class="btn btn-info btn-block">Download</button>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "hisparc",
+  "version": "1.0.0",
+  "description": "HiSparc test",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "Scott Hiett",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.1",
+    "express": "^4.17.1"
+  }
+}
