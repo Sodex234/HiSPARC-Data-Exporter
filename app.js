@@ -2,8 +2,29 @@ const axios = require("axios");
 const fs = require("fs");
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static("public"));
+
+app.post("/datadownload", async (req, res) => {
+    const requiredUrl = req.body.requiredUrl;
+
+    if(requiredUrl === undefined) {
+        res.json({
+            error: true,
+            message: "requiredUrl field is undefined."
+        });
+
+        return;
+    }
+
+    const data = (await axios.get(requiredUrl)).data;
+
+    res.send(data);
+});
 
 app.listen(process.env.PORT | 3000, () => {
     console.log("Started server");
