@@ -4,6 +4,14 @@ $(".DownloadButton").click(() => {
     downloadData();
 });
 
+$(document).ready(() => {
+    Object.keys(DataLocationMap).forEach(key => {
+        const item = DataLocationMap[key];
+
+        $(".AllowedFieldsContainer").append("<div class='col-md-6'><p>" + item.name + ": &nbsp;<input type='checkbox' checked /></p></div>");
+    });
+});
+
 const DataLocationMap = {
     pulseHeight: { slot: 4, name: "Min Pulse Height", parse: x => parseInt(x) },
     integral: { slot: 8, name: "Integral", parse: x => parseInt(x) },
@@ -40,7 +48,8 @@ const downloadData = () => {
             });
 
         const originalTotalSize = items.length;
-        const wantedSize = Math.floor(originalTotalSize / 10); // 10%
+        const wantedPercentage = $(".Input_EnterPercentage").val();
+        const wantedSize = Math.floor(originalTotalSize / 100 * (wantedPercentage === undefined ? 10 : parseFloat(wantedPercentage)));
 
         items = items.sort((a, b) => {
             return b.data.pulseHeight - a.data.pulseHeight;
